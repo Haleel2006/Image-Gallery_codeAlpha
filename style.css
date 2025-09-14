@@ -1,0 +1,257 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f3; /* light gray-blue */
+  color: #333;
+  text-align: center;
+}
+
+/* Header */
+header {
+  padding: 20px;
+  background: linear-gradient(90deg, #362626, #000000);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 15px; 
+  font-size: 2rem;
+}
+
+/* Filter Buttons */
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background0.3s;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #ff6600;
+  color: white;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Delete button */
+.delete-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(255, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: none;
+}
+
+.gallery-item:hover .delete-btn {
+  display: block;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20,20,20,0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Gallery grid layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  gap: 15px;
+  margin: 20px;
+}
+
+/* Each gallery item */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+/* Lightbox container */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* keep on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Lightbox image */
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Navigation buttons */
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+  z-index: 1001; /* make sure it's above image */
+}
+
+.navigation span {
+  cursor: pointer;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.navigation span:hover {
+  color: #ff6600;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  z-index: 1001;
+}
+.close span:hover{
+   color: #ff6600;
+}
+
+.recycle-bin {
+  background: #fafafa;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+  margin-top: 20px;
+}
+
+.recycle-bin h2 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Deleted images inside recycle bin */
+.bin-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.bin-item {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 120px; /* keeps thumbnails small */
+}
+
+.bin-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.bin-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bin-actions button {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bin-actions .restore {
+  background: #28a745;
+  color: white;
+}
+
+.bin-actions .permanent-delete {
+  background: #dc3545;
+  color: white;
+}

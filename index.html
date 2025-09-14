@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Image Gallery</h1>
+    <div class="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="nature">Nature</button>
+      <button data-filter="animals">Animals</button>
+      <button data-filter="city">City</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+      <!-- Nature -->
+      <div class="gallery-item nature">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Nature 1">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item nature">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Nature 2">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item nature">
+        <img src="https://st2.depositphotos.com/1757635/5948/i/450/depositphotos_59484765-stock-photo-landscape-with-hot-air-balloons.jpg" alt="Nature 3">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item nature">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Nature 4">
+        <button class="delete-btn">🗑️</button>
+      </div>
+
+      <!-- Animals -->
+      <div class="gallery-item animals">
+        <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Animal 1">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item animals">
+        <img src="https://images.unsplash.com/photo-1598755257130-c2aaca1f061c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Animal 2">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item animals">
+        <img src="https://images.unsplash.com/photo-1500463959177-e0869687df26?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Animal 3">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item animals">
+        <img src="https://images.unsplash.com/photo-1464157571418-57e5ec30397b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Animal 4">
+        <button class="delete-btn">🗑️</button>
+      </div>
+
+      <!-- City -->
+      <div class="gallery-item city">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="City 1">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item city">
+        <img src="https://images.unsplash.com/photo-1444084316824-dc26d6657664?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="City 2">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item city">
+        <img src="https://images.unsplash.com/flagged/photo-1559717201-fbb671ff56b7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="City 3">
+        <button class="delete-btn">🗑️</button>
+      </div>
+      <div class="gallery-item city">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="City 4">
+        <button class="delete-btn">🗑️</button>
+      </div>
+    </section>
+
+    <!-- Recycle Bin -->
+    <section class="recycle-bin" id="recycleBin">
+      <h2>♻️ Recycle Bin</h2>
+      <div class="bin-items"></div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <div class="navigation">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
